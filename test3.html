@@ -18,9 +18,18 @@
 				// The anchor for this image is the base of the flagpole at 0,32.
 				anchor : new google.maps.Point(0, 32)
 			};
+		//	var shadow = {
+		//		url : 'https://developers.google.com/maps/documentation/javascript/examples/images/beachflag_shadow.png',
+				// The shadow image is larger in the horizontal dimension
+				// while the position and offset are the same as for the main image.
+		//		size : new google.maps.Size(37, 32),
+		//		origin : new google.maps.Point(0, 0),
+		//		anchor : new google.maps.Point(0, 32)
+		//	};
+
 			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom : 15,
-				center : new google.maps.LatLng(33.8453675,-84.3573453),
+				zoom : 2,
+				center : new google.maps.LatLng(21.809229444410303, 66.42642420687956),
 				mapTypeId : google.maps.MapTypeId.ROADMAP
 			});
 
@@ -33,18 +42,20 @@
 				//alert("Loading");
 				var marker, i;
 
-				var url = "http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetBusByRoute/110";
+				var url = "http://open-notify-api.herokuapp.com/iss-now.json?callback=?";
 				var name;
 				var lat;
 				var lon;
 				var locations;
-				$.getJSON(url, function(response) {handleData(response)
+				
+				
+					$.getJSON(url, function(response) {handleData(response)
 					});
 			
 				
 			}
-			var marker;
 
+var marker
 			function handleData(response) {
 				//alert(response);
 				var n;
@@ -52,14 +63,12 @@
 				//{
 				name = response.timestamp;
 				//alert(name);
-				for (var i=0;i<response.length;i++){
-				lat = response[i].LATITUDE;
-				lon = response[i].LONGITUDE;
+				lat = response.iss_position.latitude;
+				lon = response.iss_position.longitude;
 				var myLatLng = new google.maps.LatLng(lat, lon);
 				if (marker) {
-        		//if marker already was created change positon
         		marker.setPosition(myLatLng);
-        	}else{
+        	    }else{
 				marker = new google.maps.Marker({
 					position : myLatLng,
 				//	shadow : shadow,
@@ -68,7 +77,6 @@
 					title : name,
 					zIndex : 1
 				});
-				}
 				}
 			}
 		</script>
