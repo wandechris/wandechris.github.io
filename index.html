@@ -10,9 +10,9 @@
 		<div id="map" class="gmap3"></div>
 		<script type="text/javascript">
 			var image = {
-				url : 'http://maps.google.com/mapfiles/marker_green.png',
+				url : 'images/bus.png',
 				// This marker is 20 pixels wide by 32 pixels tall.
-				size : new google.maps.Size(20, 32),
+				//size : new google.maps.Size(20, 32),
 				// The origin for this image is 0,0.
 				origin : new google.maps.Point(0, 0),
 				// The anchor for this image is the base of the flagpole at 0,32.
@@ -20,7 +20,7 @@
 			};
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom : 15,
-				center : new google.maps.LatLng(33.8453675,-84.3573453),
+				center : new google.maps.LatLng(33.9216781,-84.3446087),
 				mapTypeId : google.maps.MapTypeId.ROADMAP
 			});
 
@@ -30,14 +30,16 @@
 				loadData();
 			}, 500);	}, 1000);
 			function loadData() {
-				//alert("Loading");
+				
+				
 				var marker, i;
 
-				var url = "http://developer.itsmarta.com/BRDRestService/BRDRestService.svc/GetBusByRoute/110";
+				var url = "proxy.php";
 				var name;
 				var lat;
 				var lon;
 				var locations;
+				jQuery.support.cors = true;
 				$.getJSON(url, function(response) {handleData(response)
 					});
 			
@@ -50,27 +52,29 @@
 				var n;
 				// for(n=0; n<response.items.length; n++)
 				//{
-				name = response.timestamp;
+				
 				//alert(name);
 				for (var i=0;i<response.length;i++){
+					name = response[i].VEHICLE;
 				lat = response[i].LATITUDE;
 				lon = response[i].LONGITUDE;
 				var myLatLng = new google.maps.LatLng(lat, lon);
-				if (marker) {
+				//if (marker) {
         		//if marker already was created change positon
-        		marker.setPosition(myLatLng);
-        	}else{
+        		//marker.setPosition(myLatLng);
+        	//}else{
 				marker = new google.maps.Marker({
 					position : myLatLng,
-				//	shadow : shadow,
 					icon : image,
 					map : map,
 					title : name,
 					zIndex : 1
 				});
+				//}
 				}
-				}
+				
 			}
+			
 		</script>
 	</body>
 </html>
