@@ -20,18 +20,18 @@
 			};
 			var map = new google.maps.Map(document.getElementById('map'), {
 				zoom : 15,
-				center : new google.maps.LatLng(33.9216781,-84.3446087),
+				center : new google.maps.LatLng(33.9216781, -84.3446087),
 				mapTypeId : google.maps.MapTypeId.ROADMAP
 			});
 
 			var infowindow = new google.maps.InfoWindow();
 			setInterval(function() {
-			setTimeout(function() {
-				loadData();
-			}, 500);	}, 1000);
+				setTimeout(function() {
+					loadData();
+				}, 500);
+			}, 1000);
 			function loadData() {
-				
-				
+
 				var marker, i;
 
 				var url = "proxy.php";
@@ -40,11 +40,11 @@
 				var lon;
 				var locations;
 				jQuery.support.cors = true;
-				$.getJSON(url, function(response) {handleData(response)
-					});
-			
-				
+				$.getJSON(url, function(response) {
+					handleData(response)
+				});
 			}
+
 			var marker;
 
 			function handleData(response) {
@@ -52,29 +52,28 @@
 				var n;
 				// for(n=0; n<response.items.length; n++)
 				//{
-				
+
 				//alert(name);
-				for (var i=0;i<response.length;i++){
+				for(var i = 0; i < response.length; i++) {
 					name = response[i].VEHICLE;
-				lat = response[i].LATITUDE;
-				lon = response[i].LONGITUDE;
-				var myLatLng = new google.maps.LatLng(lat, lon);
-				//if (marker) {
-        		//if marker already was created change positon
-        		//marker.setPosition(myLatLng);
-        	//}else{
-				marker = new google.maps.Marker({
-					position : myLatLng,
-					icon : image,
-					map : map,
-					title : name,
-					zIndex : 1
-				});
-				//}
+					lat = response[i].LATITUDE;
+					lon = response[i].LONGITUDE;
+					var myLatLng = new google.maps.LatLng(lat, lon);
+					if (marker && marker.getTitle() == name) {
+					//if marker already was created change positon
+					marker.setPosition(myLatLng);
+					}else{
+					marker = new google.maps.Marker({
+						position : myLatLng,
+						icon : image,
+						map : map,
+						title : name,
+						zIndex : 1
+					});
+					}
 				}
-				
+
 			}
-			
 		</script>
 	</body>
 </html>
