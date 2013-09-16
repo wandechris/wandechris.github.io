@@ -19,8 +19,8 @@
 				anchor : new google.maps.Point(0, 32)
 			};
 			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom : 12,
-				center : new google.maps.LatLng(33.7528383, -84.3898637),
+				zoom : 15,
+				center : new google.maps.LatLng(33.9216781, -84.3446087),
 				mapTypeId : google.maps.MapTypeId.ROADMAP
 			});
 
@@ -38,7 +38,7 @@
 				var name;
 				var lat;
 				var lon;
-				//var locations;
+				var locations;
 				jQuery.support.cors = true;
 				$.getJSON(url, function(response) {
 					handleData(response)
@@ -46,24 +46,23 @@
 			}
 
 			var marker;
-			var myLatLng;
-			var oldMarkers = [];
-			
 
 			function handleData(response) {
+				//alert(response);
 				var n;
+				// for(n=0; n<response.items.length; n++)
+				//{
 
-					if(oldMarkers && oldMarkers.length !== 0) {
-						for(var i = 0; i < oldMarkers.length; ++i) {
-							oldMarkers[i].setMap(null);
-						}
-					}
 				//alert(name);
 				for(var i = 0; i < response.length; i++) {
 					name = response[i].VEHICLE;
 					lat = response[i].LATITUDE;
 					lon = response[i].LONGITUDE;
-					myLatLng = new google.maps.LatLng(lat, lon);
+					var myLatLng = new google.maps.LatLng(lat, lon);
+					if (marker && marker.getTitle() == name) {
+					//if marker already was created change positon
+					marker.setPosition(myLatLng);
+					}else{
 					marker = new google.maps.Marker({
 						position : myLatLng,
 						icon : image,
@@ -71,8 +70,8 @@
 						title : name,
 						zIndex : 1
 					});
-					oldMarkers.push( marker );
 					}
+				}
 
 			}
 		</script>
