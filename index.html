@@ -1,80 +1,136 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-		<title>Google Maps Multiple Markers</title>
-		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-		<link rel="stylesheet" href="css/style.css" type="text/css" />
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Awandellfairytail</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="mobile.css">
+		<link rel="shortcut icon" href="./images/EA-logo.png" type="image/x-icon">
 	</head>
+
 	<body>
-		<div id="map" class="gmap3"></div>
-		<script type="text/javascript">
-			var image = {
-				url : 'images/bus.png',
-				// This marker is 20 pixels wide by 32 pixels tall.
-				//size : new google.maps.Size(20, 32),
-				// The origin for this image is 0,0.
-				origin : new google.maps.Point(0, 0),
-				// The anchor for this image is the base of the flagpole at 0,32.
-				anchor : new google.maps.Point(0, 32)
-			};
-			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom : 12,
-				center : new google.maps.LatLng(33.7528383, -84.3898637),
-				mapTypeId : google.maps.MapTypeId.ROADMAP
-			});
 
-			var infowindow = new google.maps.InfoWindow();
-			setInterval(function() {
-				setTimeout(function() {
-					loadData();
-				}, 500);
-			}, 1000);
-			function loadData() {
+		<section class="hero-section">
+			<div class="hero-container container">
+				<div class="header">
+					<figure>
+						<img src="./images/EA-logo.png" alt="logo" class="site-logo">
+					</figure>
+					<p class="site-title">#Awandellfairytale</p>
+				</div>
+				<div class="hero-content-div">
+					<p class="couple-names">Emmanuella & Akinwande</p>
+					<p class="hero-text">are inviting you to celebrate their wedding...</p>
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="hero-flower-div">
+			<hr class="flower-line">
+			<figure class="flower-container">
+				<img src="./images/left-h-flower.png" alt="flower" class="hero-flower">
+				<img src="./images/right-h-flower.png" alt="flower" class="hero-flower">
+			</figure>
+			<hr class="flower-line">
+		</section>
+		<section class="section-two">
+			<img src="./images/couple-sitting-flower.png" alt="right flower" class="couple-sitting-flower" loading="lazy">
+			<figure class="couple-image-container">
+				<img src="./images/couple-sitting.png" alt="couple sitting" class="couple-sitting" width="675" loading="lazy">
+			</figure>
+			<div class="details-div">
+				<div class="date-div">
+					<p class="date-heading">DATE</p>
+					<hr class="line">
+					<p class="date-text">September 16, 2023</p>
+				</div>
+				<div class="time-div">
+					<p class="time-heading">TIME</p>
+					<hr class="line">
+					<p class="time-text">9:00 AM Prompt</p>
+				</div>
+				<div class="venue-div">
+					<p class="venue-heading">VENUE</p>
+					<hr class="line">
+					<p class="venue-text">Lagos, Nigeria</p>
+				</div>
+				<div class="gift-div">
+					<p class="gift-text">LOOKING FOR A WAY TO SEND GIFTS?</p>
+					<hr class="line">
+					<div class="button-div">
+						<a href="#hollow" class="gift-button fill-button" id="filled">GIVE CASH</a>
+						<a href="#filled" class="gift-button hollow-button" id="hollow">SEND ITEMS</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section-three">
+			<div class="container collage-container">
+				<p class="section-heading">A collage of beautiful memories</p>
+				<img src="./images/left-v-flower.png" alt="left flower" class="left-v-flower">
+				<div class="collage-div">
+					<figure class="video-container">
+						<video id="myVideo" src="./Wedding Video Trailer - Wedding Day In Cinematic Look.mp4" controls></video>
+						<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/kebq86BTZFA" id="myVideo"
+							title="YouTube video player" frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen></iframe> -->
+						<div class="play-button" id="play-button" onclick="playVideo()">&#9658;</div>
+					</figure>
+					<div class="couple-gallery">
 
-				var marker, i;
+						<div class="row row1">
+							<div class="gallery-image-container">
+								<img src="./images/couple-smooching.png" alt="" class="gallery-image" id="image-1" loading="lazy">
+							</div>
+							<div class="gallery-image-container">
+								<img src="./images/couple-hands.png" alt="" class="gallery-image" id="image-5" loading="lazy">
+							</div>
+						</div>
 
-				var url = "proxy.php";
-				var name;
-				var lat;
-				var lon;
-				//var locations;
-				jQuery.support.cors = true;
-				$.getJSON(url, function(response) {
-					handleData(response)
-				});
-			}
+						<div class="row row2">
+							<div class="gallery-image-container">
+								<img src="./images/couple-hands.png" alt="" class="gallery-image" id="image-2" loading="lazy">
+							</div>
+							<div class="gallery-image-container">
+								<img src="./images/couple-smooching.png" alt="" class="gallery-image" id="image-3" loading="lazy">
+							</div>
+						</div>
 
-			var marker;
-			var myLatLng;
-			var oldMarkers = [];
-			
+						<div class="row row3">
+							<div class="gallery-image-container">
+								<img src="./images/couple-smooching.png" alt="" class="gallery-image" id="image-6" loading="lazy">
+							</div>
+							<div class="gallery-image-container">
+								<img src="./images/couple-sitting-mini.png" alt="" class="gallery-image" id="image-4" loading="lazy">
+							</div>
+						</div>
 
-			function handleData(response) {
-				var n;
-
-					if(oldMarkers && oldMarkers.length !== 0) {
-						for(var i = 0; i < oldMarkers.length; ++i) {
-							oldMarkers[i].setMap(null);
-						}
-					}
-				//alert(name);
-				for(var i = 0; i < response.length; i++) {
-					name = response[i].VEHICLE;
-					lat = response[i].LATITUDE;
-					lon = response[i].LONGITUDE;
-					myLatLng = new google.maps.LatLng(lat, lon);
-					marker = new google.maps.Marker({
-						position : myLatLng,
-						icon : image,
-						map : map,
-						title : name,
-						zIndex : 1
-					});
-					oldMarkers.push( marker );
-					}
-
-			}
-		</script>
+						<div class="row row4">
+							<div class="gallery-image-container">
+								<img src="./images/couple-sitting-mini.png" alt="" class="gallery-image" id="image-7" loading="lazy">
+							</div>
+							<div class="gallery-image-container">
+								<img src="./images/couple-smooching.png" alt="" class="gallery-image" id="image-8" loading="lazy">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<img src="./images/right-v-flower.png" alt="right flower" class="right-v-flower">
+		</section>
+		<div class="base-paragraph">
+			<p class="base-text">From</p>
+			<p class="couple-names-big">Emmanuella & Akinwande</p>
+			<p class="base-text">with lots of <span class="heart">&#x2764;</span></p>
+		</div>
+		<a href="#top" class="scrollUp" id="scrollUp" dataScrollUp aria-label="Go To Top">
+			<img src="./images/fast-forward.png" alt="" width="20">
+		</a>
 	</body>
+	<script src="script.js"></script>
+
 </html>
