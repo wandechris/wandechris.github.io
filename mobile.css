@@ -1,4 +1,41 @@
+@media screen and (max-width: 1230px) {
+
+  .couple-image-container {
+    width: 100%;
+    gap: 200px;
+  }
+
+  .hashtag {
+    font-size: 110px;
+    font-weight: 400;
+    line-height: 260px;
+    text-align: center;
+    /* overflow: hidden; */
+  }
+
+  .couple-sitting {
+    width: 500px;
+    left: 25%;
+    right: 25%;
+  }
+
+  .native-couple {
+    width: 330px;
+    height: 316px;
+    left: 0%;
+  }
+
+  .couple-holding {
+    width: 344px;
+    height: 366px;
+  }
+}
+
 @media screen and (max-width:960px) {
+  .container {
+    width: 90%;
+  }
+
   .hero-section {
     position: relative;
     background: url(./images/hero-couple-mobile.png);
@@ -24,20 +61,56 @@
   .detail-container {
     width: 100%;
     display: flex;
-    justify-content: left;
-    /* align-items: center; */
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     flex-direction: column-reverse;
+    gap: 20px;
   }
 
   .couple-image-container {
-    width: 100%;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* flex-direction: column-reverse; */
+    margin-top: 330px;
   }
 
   .couple-sitting {
-    width: 100%;
+    /* width: 450px; */
+    left: auto;
+    right: auto;
+    margin-top: -850px;
   }
-  
+
+  /* .native-couple {
+    width: 290px;
+    height: 276px;
+    left: 0%;
+  } */
+
+  .couple-holding {
+    /* width: 274px;
+    height: 326px; */
+    margin-top: -45px;
+  } 
+
+  .hashtag {
+    font-size: 80px;
+    line-height: 260px;
+    display: flex;
+    flex-wrap: wrap;
+    position: sticky;
+  }
+
+  .hashtag-div {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
   .details-div {
     padding: 50px 30px;
   }
@@ -50,7 +123,7 @@
   .site-logo {
     width: 60px;
   }
-  
+
   .couple-names {
     font-size: 28px;
     line-height: 42px;
@@ -64,16 +137,25 @@
 
   .video-container {
     width: 100%;
-    height: 460px;
+    height: fit-content;
+  }
+
+  .love-story-div {
+    max-width: 600px;
+    padding: 15px 31px;
+    gap: 15px;
   }
 
   .collage-div {
     gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .couple-gallery {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     gap: 8px;
   }
@@ -86,12 +168,12 @@
   }
 
   .gallery-image {
-    width: 162px;
+    width: 160px;
   }
 
   .couple-names-big {
     font-weight: 400;
-    font-size: 40px;
+    font-size: 80px;
     line-height: 80px;
     text-align: center;
     color: #7A179B;
@@ -103,7 +185,7 @@
     font-size: 12px;
     line-height: 16px;
     text-align: center;
-    color: #1A0321;
+  	color: #E46B5E;
   }
 
   .video-container {
@@ -118,7 +200,7 @@
     width: 65px;
     display: none;
   }
-  
+
   .right-v-flower {
     transform: rotateY(180deg);
     position: absolute;
@@ -130,10 +212,155 @@
 
   .couple-sitting-flower {
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 0;
     display: block;
     width: 67px;
   }
 }
 
+@media screen and (max-width:420px) {
+  .site-title {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+
+  }
+
+  .site-logo {
+    width: 49.66px;
+    height: 40px;
+  }
+
+  .couple-names {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .hero-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .hero-flower {
+    width: 68.38px;
+    height: 42.49px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+  }
+
+  .flower-line {
+    width: 45px;
+    height: 0px;
+    border: 1px solid #CDAA73;
+  }
+
+  .date-heading,
+  .time-heading,
+  .venue-heading,
+  .gift-text {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    color: #112629;
+  }
+
+  .line {
+    width: 30px;
+    height: 0px;
+    border: 1px solid #EAA9B7;
+  }
+
+  .date-text,
+  .time-text,
+  .venue-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #000000;
+  }
+
+  .details-div {
+    padding: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .gift-button {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 12px 24px;
+    gap: 10px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .section-heading {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #112629;
+  }
+
+  .section-three {
+    margin: 30px 0 50px 0;
+  }
+
+  .couple-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .gallery-image {
+    width: 164px;
+  }
+
+  .couple-names-big {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 80px;
+    text-align: center;
+    color: #7A179B;
+    opacity: 0.2;
+  }
+}
+
+@media screen and (max-width:374px) {
+  .collage-container {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width:320px) {
+  .gallery-image {
+    width: 148px;
+  }
+}
+
+@media screen and (max-width:280px) {
+  .gallery-image {
+    width: 128px;
+  }
+}
