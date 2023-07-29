@@ -46,6 +46,15 @@
     background-size: cover;
   }
 
+  .hero-section::after {
+    opacity: 0%;
+  }
+
+  .hero-content-div {
+    position: absolute;
+    bottom: 30%;
+  }
+
   /* .scrolldown-button {
     transform: rotate(90degs);
     display: block;
@@ -396,7 +405,7 @@
   }
 
   .hashtag {
-    font-size: 38px;
+    font-size: 46px;
     line-height: 72px;
     text-align: center;
     top: 55%;
@@ -471,9 +480,9 @@
     font-weight: 400;
     font-size: 40px;
     line-height: 80px;
-    text-align: center;
-    color: #7A179B;
-    opacity: 0.2;
+    /* text-align: center; */
+    color: #7a179b1a;;
+    /* opacity: 0.2; */
   }
 
   .love-story-div {

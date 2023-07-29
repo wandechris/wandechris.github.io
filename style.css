@@ -51,9 +51,9 @@
 	--fw-3: 500;
 
 	/* ##font family */
-	--ff-1: ogg, "Courier New", Courier, monospace;
+	--ff-1: ogg, "Courier New", Courier;
 	--ff-2: 'Inter', sans-serif;
-	--ff-3: ogg-medium, "Courier New", Courier, monospace;
+	--ff-3: ogg-medium, "Courier New", Courier;
 }
 
 /* side scrollbar */
@@ -130,7 +130,7 @@ a {
 	opacity: 30%;
 	z-index: -1;
 	animation-name: brighten;
-	animation-duration: 5s;
+	animation-duration: 4s;
 	/* animation-delay: 1s; */
 	animation-timing-function: ease-in-out;
 }
@@ -205,8 +205,10 @@ a {
 
 .scrolldown-div {
 	/* display: none; */
-	padding-bottom: 100px;
+	position: absolute;
+	/* padding-bottom: 100px; */
 	animation: bounce 2s ease 0s infinite normal forwards;
+	bottom: 10%;
 }
 
 /* scroll down animation */
@@ -300,7 +302,7 @@ a {
 
 .hashtag {
 	position: absolute;
-	opacity: 0.30000001192092896;
+	opacity: 0.150000001192092896;
 	color: #7a179b1a;
 	font-family: var(--ff-1);
 	font-size: 140px;
@@ -678,7 +680,7 @@ a {
 }
 
 .couple-names-big {
-	opacity: 0.30000001192092896;
+	opacity: 0.150000001192092896;
 	color: #7a179b1a;
 	font-family: Ogg;
 	font-size: 150px;
